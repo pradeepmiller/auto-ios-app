@@ -12,5 +12,10 @@ extension Setup {
             case HOME_SCREEN_TEXT_DESCRIPTION = "home_screen_text_description"
             case HOME_SCREEN_BUTTON_MENU = "home_screen_button_menu"
         }
+
+        enum Common: String, RawRepresentable {
+            case BUTTON_BACK = "button_back"
+            case BUTTON_CLOSE = "button_close"
+        }
     }
 }
