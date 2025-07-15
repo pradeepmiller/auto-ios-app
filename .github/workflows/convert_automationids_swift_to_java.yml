@@ -5,7 +5,7 @@ on:
     branches:
       - local_15_Jul_2025
     paths:
-      - '**/AccessibilityIdentifiers'
+      - '**/*AccessibilityIdentifiers*.swift'
 
 permissions:
   contents: write
