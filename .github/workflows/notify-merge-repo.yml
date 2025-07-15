@@ -15,5 +15,5 @@ jobs:
           curl -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: Bearer ${{ secrets.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 }}" \
-            https://api.github.com/repos/pradeepmiller/auto-test-app/dispatches \
+            https://github.com/pradeepmiller/auto-test-app/dispatches \
             -d '{"event_type":"merge_java_locators"}'
