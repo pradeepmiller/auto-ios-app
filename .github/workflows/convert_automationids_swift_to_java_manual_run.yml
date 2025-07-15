@@ -1,4 +1,4 @@
-name: Fetch automation id locators from swift files having text 'AccessibilityIdentifiers' in file name and convert to AutomationIdLocatorsAndroid.java
+name: Convert .swift identifier files to AutomationIdLocatorsIos.java
 
 on:
   workflow_dispatch:
