@@ -1,0 +1,36 @@
+name: Convert .swift identifier files to AutomationIdLocatorsIos.java
+
+on:
+  push:
+    branches:
+      - local_15_Jul_2025
+    paths:
+      - '**/AccessibilityIdentifiers'
+
+permissions:
+  contents: write
+
+jobs:
+  convert-kotlin-to-java:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run conversion script
+        run: |
+          python3 scripts/swift_to_java_converter.py \
+            src/Sample_App/Sample_App/Presentation/Features/ \
+            src/Sample_App/Sample_App/Presentation/AutomationIdLocatorsIos.java
+
+      - name: Commit and push converted file
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Convert swift files having text 'AccessibilityIdentifiers' in file name to AutomationIdLocatorsIos.java using Python script"
+          file_pattern: src/Sample_App/Sample_App/Presentation/AutomationIdLocatorsIos.java
